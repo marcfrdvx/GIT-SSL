@@ -1,0 +1,14 @@
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\bin\Debug\SSL.exe.config
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\bin\Debug\SSL.exe
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\bin\Debug\SSL.pdb
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.csprojAssemblyReference.cache
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.MainBackground.resources
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.Properties.Resources.resources
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.csproj.GenerateResource.cache
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.exe
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.pdb
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.Menu.resources
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.Joueur.resources
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.Jouer.resources
+C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.CultureGenerale.resources
