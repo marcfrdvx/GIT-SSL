@@ -23,7 +23,7 @@ namespace SSL
             DialogResult result = MessageBox.Show("Êtes-vous sûr de vouloir quitter l'application ?", "Quitter ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                Environment.Exit(0);
+                Environment.Exit(1);
             }
         }
 
@@ -45,6 +45,7 @@ namespace SSL
             Jouer frmJouer = new Jouer(this);
             frmJouer.Show();
             this.Hide();
+
         }
     }
 }

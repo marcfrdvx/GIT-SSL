@@ -7,11 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
+
+
+
 
 namespace SSL
 {
     public partial class CultureGenerale : Form
     {
+        //directory des ressources pour JSON
+        public string path = "..\\..\\Resources\\Questions.json";
+
+        List<string> questionnaire = new List<string>();
+
         private Jouer RefToJouer;
         private string[,] question = new string[2, 6] { { "question1", "rep1a", "rep1bjuste", "rep1c", "rep1d", "2" }, { "question2", "rep2ajuste", "rep2b", "rep2c", "rep2d", "1" } };
         private int numQuestion = 0;
@@ -83,7 +93,19 @@ namespace SSL
         {
             tblDuo.Visible = true;
             btnRepDuo.Visible = false;
-            ShowDuo();
+            ShowDuo();            
+        }
+
+        private void CultureGenerale_Load(object sender, EventArgs e)
+        {
+
+
+            //initialise le tableau pour le questionnaire grâce au fichier JSON
+            using (StreamReader strReader = new StreamReader(path))
+            {
+                string json = strReader.ReadToEnd();
+                lblJason.Text = json;
+            }
         }
     }
 }

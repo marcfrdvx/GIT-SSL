@@ -8,6 +8,7 @@ namespace SSL
 {
     static class Program
     {
+        //public static List<Joueur> listJoueur = new List<Joueur>();
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>

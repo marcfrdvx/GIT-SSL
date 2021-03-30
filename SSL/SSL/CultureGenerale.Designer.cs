@@ -44,8 +44,9 @@ namespace SSL
             this.lblRep4 = new System.Windows.Forms.Label();
             this.tblCarre = new System.Windows.Forms.TableLayoutPanel();
             this.tblDuo = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDuo1 = new System.Windows.Forms.Label();
             this.lblDuo2 = new System.Windows.Forms.Label();
+            this.lblDuo1 = new System.Windows.Forms.Label();
+            this.lblJason = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRight)).BeginInit();
             this.tblCarre.SuspendLayout();
@@ -74,12 +75,13 @@ namespace SSL
             // 
             // btnRepDuo
             // 
-            this.btnRepDuo.Location = new System.Drawing.Point(226, 402);
+            this.btnRepDuo.Location = new System.Drawing.Point(24, 440);
             this.btnRepDuo.Name = "btnRepDuo";
             this.btnRepDuo.Size = new System.Drawing.Size(168, 66);
             this.btnRepDuo.TabIndex = 3;
             this.btnRepDuo.Text = "Duo";
             this.btnRepDuo.UseVisualStyleBackColor = true;
+            this.btnRepDuo.Visible = false;
             this.btnRepDuo.Click += new System.EventHandler(this.btnRepDuo_Click);
             // 
             // btnRepCarre
@@ -207,7 +209,7 @@ namespace SSL
             this.tblDuo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblDuo.Controls.Add(this.lblDuo2, 0, 1);
             this.tblDuo.Controls.Add(this.lblDuo1, 0, 0);
-            this.tblDuo.Location = new System.Drawing.Point(102, 484);
+            this.tblDuo.Location = new System.Drawing.Point(24, 512);
             this.tblDuo.Name = "tblDuo";
             this.tblDuo.RowCount = 2;
             this.tblDuo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -215,16 +217,6 @@ namespace SSL
             this.tblDuo.Size = new System.Drawing.Size(336, 179);
             this.tblDuo.TabIndex = 6;
             this.tblDuo.Visible = false;
-            // 
-            // lblDuo1
-            // 
-            this.lblDuo1.AutoSize = true;
-            this.lblDuo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDuo1.Location = new System.Drawing.Point(3, 0);
-            this.lblDuo1.Name = "lblDuo1";
-            this.lblDuo1.Size = new System.Drawing.Size(29, 31);
-            this.lblDuo1.TabIndex = 3;
-            this.lblDuo1.Text = "1";
             // 
             // lblDuo2
             // 
@@ -236,28 +228,49 @@ namespace SSL
             this.lblDuo2.TabIndex = 4;
             this.lblDuo2.Text = "2";
             // 
+            // lblDuo1
+            // 
+            this.lblDuo1.AutoSize = true;
+            this.lblDuo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDuo1.Location = new System.Drawing.Point(3, 0);
+            this.lblDuo1.Name = "lblDuo1";
+            this.lblDuo1.Size = new System.Drawing.Size(29, 31);
+            this.lblDuo1.TabIndex = 3;
+            this.lblDuo1.Text = "1";
+            // 
+            // lblJason
+            // 
+            this.lblJason.AutoSize = true;
+            this.lblJason.Location = new System.Drawing.Point(41, 331);
+            this.lblJason.Name = "lblJason";
+            this.lblJason.Size = new System.Drawing.Size(42, 13);
+            this.lblJason.TabIndex = 7;
+            this.lblJason.Text = "JASON";
+            // 
             // CultureGenerale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.tblDuo);
+            this.Controls.Add(this.lblJason);
             this.Controls.Add(this.tblCarre);
             this.Controls.Add(this.picBoxLeft);
             this.Controls.Add(this.picBoxRight);
             this.Controls.Add(this.btnRepCash);
             this.Controls.Add(this.btnRepCarre);
             this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.btnRepDuo);
             this.Controls.Add(this.lblQuestion);
             this.Controls.Add(this.lblJoueur);
             this.Controls.Add(this.btnRetour);
+            this.Controls.Add(this.tblDuo);
+            this.Controls.Add(this.btnRepDuo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CultureGenerale";
             this.Text = " ";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.CultureGenerale_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRight)).EndInit();
             this.tblCarre.ResumeLayout(false);
@@ -288,5 +301,6 @@ namespace SSL
         private System.Windows.Forms.TableLayoutPanel tblDuo;
         private System.Windows.Forms.Label lblDuo2;
         private System.Windows.Forms.Label lblDuo1;
+        private System.Windows.Forms.Label lblJason;
     }
 }

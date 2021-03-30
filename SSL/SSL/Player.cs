@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SSL
 {
-    class Player
+    public class Player
     {
         // Variables internes
         private string _nom;
         private int _score;
         private string _team;
-        // Proprietes
 
+        // Proprietes
         public string Nom
         {
             get { return _nom; }
@@ -30,6 +30,8 @@ namespace SSL
             get { return _team; }
             set { _team = value; }
         }
+
+        //ID joueur
         // Constructeur
 
         // par default
@@ -42,7 +44,13 @@ namespace SSL
             _nom = nom;
             _score = score;
             _team = equipe;
+        }
 
+        public override string ToString()
+        {
+            string joueur = "";
+            joueur = this._nom + " , score : " + this._score;
+            return joueur;
         }
     }
 }

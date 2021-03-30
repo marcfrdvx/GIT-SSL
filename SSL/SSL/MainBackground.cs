@@ -24,7 +24,6 @@ namespace SSL
             //ouvre une nouvelle forme menu au chargement du background
             Menu menu = new Menu();
             menu.ShowDialog();
-
         }
     }
 }

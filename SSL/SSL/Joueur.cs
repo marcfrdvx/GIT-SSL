@@ -12,6 +12,7 @@ namespace SSL
 {
     public partial class Joueur : Form
     {
+        public List<Player> listPlayer = new List<Player>();
         /// <summary>
         /// La forme de référence principale
         /// </summary>
@@ -24,9 +25,7 @@ namespace SSL
         public Joueur(Menu frm)
         {
             RefToMain = frm;
-            InitializeComponent();
-            
-
+            InitializeComponent(); 
         }
 
         private void btnRetour_Click(object sender, EventArgs e)
@@ -36,25 +35,34 @@ namespace SSL
         }
 
         private void picBoxAddPlayer_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Joueur ajouté : "+ tbxAddPlayer.Text);
+        {          
+            //Créer le joueur
+            Player j = new Player(tbxAddPlayer.Text);
+            //Le stock dans la liste de joueurs
+            listPlayer.Add(j);
 
-            var player = new List<string>();
-            player.Add(tbxAddPlayer.Text);
-
-            foreach (var item in player)
+            //supprime l'affichage du tableau
+            flowPanelJoueur.Controls.Clear();
+            //affiche chaque joueur dans le tableau
+            foreach (var Player in listPlayer)
             {
                 Label lbl = new Label();
-                lbl.Text = item.ToString();
-                splitContainerJoueur.Panel1.Controls.Add(lbl);
+                lbl.Text = Player.ToString();
+                lbl.AutoSize = true;
+                flowPanelJoueur.Controls.Add(lbl);
             }
-
-
         }
 
         private void picBoxAddPlayer_MouseMove(object sender, MouseEventArgs e)
         {
             picBoxAddPlayer.BackColor = Color.White;
+        }
+
+        private void btnDeleteAllPlayer_Click(object sender, EventArgs e)
+        {
+            //Supprime tous les joueurs (objet + liste)
+            listPlayer.Clear();
+            flowPanelJoueur.Controls.Clear();
         }
     }
 }
