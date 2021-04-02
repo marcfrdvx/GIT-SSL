@@ -33,8 +33,10 @@ namespace SSL
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picBoxCG = new System.Windows.Forms.PictureBox();
+            this.btnGetQuestion = new System.Windows.Forms.Button();
+            this.rtbxQuestions = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCG)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRetour
@@ -78,16 +80,34 @@ namespace SSL
             this.label2.TabIndex = 3;
             this.label2.Text = "CULTURE GENERALE";
             // 
-            // pictureBox1
+            // picBoxCG
             // 
-            this.pictureBox1.Image = global::SSL.Properties.Resources.CG;
-            this.pictureBox1.Location = new System.Drawing.Point(198, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(285, 132);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.picBoxCG.Image = global::SSL.Properties.Resources.CG;
+            this.picBoxCG.Location = new System.Drawing.Point(198, 69);
+            this.picBoxCG.Name = "picBoxCG";
+            this.picBoxCG.Size = new System.Drawing.Size(285, 132);
+            this.picBoxCG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxCG.TabIndex = 2;
+            this.picBoxCG.TabStop = false;
+            this.picBoxCG.Click += new System.EventHandler(this.picBoxCG_Click);
+            // 
+            // btnGetQuestion
+            // 
+            this.btnGetQuestion.Location = new System.Drawing.Point(786, 113);
+            this.btnGetQuestion.Name = "btnGetQuestion";
+            this.btnGetQuestion.Size = new System.Drawing.Size(124, 58);
+            this.btnGetQuestion.TabIndex = 4;
+            this.btnGetQuestion.Text = "Get questions";
+            this.btnGetQuestion.UseVisualStyleBackColor = true;
+            this.btnGetQuestion.Click += new System.EventHandler(this.btnGetQuestion_Click);
+            // 
+            // rtbxQuestions
+            // 
+            this.rtbxQuestions.Location = new System.Drawing.Point(215, 360);
+            this.rtbxQuestions.Name = "rtbxQuestions";
+            this.rtbxQuestions.Size = new System.Drawing.Size(670, 163);
+            this.rtbxQuestions.TabIndex = 5;
+            this.rtbxQuestions.Text = "";
             // 
             // Jouer
             // 
@@ -95,9 +115,11 @@ namespace SSL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.rtbxQuestions);
+            this.Controls.Add(this.btnGetQuestion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picBoxCG);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRetour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -105,7 +127,7 @@ namespace SSL
             this.Text = "Jouer";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,8 +137,10 @@ namespace SSL
 
         private System.Windows.Forms.Button btnRetour;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxCG;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnGetQuestion;
+        private System.Windows.Forms.RichTextBox rtbxQuestions;
     }
 }

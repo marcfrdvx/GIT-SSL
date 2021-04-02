@@ -128,6 +128,7 @@ namespace SSL
             this.Text = "Joueur";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Joueur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAddPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

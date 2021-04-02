@@ -18,13 +18,20 @@ namespace SSL
     public partial class CultureGenerale : Form
     {
         //directory des ressources pour JSON
-        public string path = "..\\..\\Resources\\Questions.json";
+        public string path = "..\\..\\Resources\\data.json";
+        //Créer une liste de question qui stockera toutes les questions du fichier JSON
+        public List<Question> QuestionsAll;
+        //string retourner par JsonConverter depuis fichier JSON
+        public string jsonData = "";
+        public int questionActuelle = 0;
+        public Question q;
+        public bool labelClicked;
 
-        List<string> questionnaire = new List<string>();
+        public int nbJoueurMax;
+        public int numJoueurActuel;
 
+        //référence pour revenir au menu précédent (Jouer)
         private Jouer RefToJouer;
-        private string[,] question = new string[2, 6] { { "question1", "rep1a", "rep1bjuste", "rep1c", "rep1d", "2" }, { "question2", "rep2ajuste", "rep2b", "rep2c", "rep2d", "1" } };
-        private int numQuestion = 0;
         public CultureGenerale(Jouer frm)
         {
             RefToJouer = frm;
@@ -37,75 +44,145 @@ namespace SSL
             this.Close();
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            NextQuestion();
-            btnStart.Visible = false;            
-        }
-
         private void picBoxRight_Click(object sender, EventArgs e)
         {
             NextQuestion();
-            picBoxRight.Visible = false;
         }
 
         private void NextQuestion()
         {
-            if (numQuestion >= question.GetLength(0))
+            //Affiche la prochaine question
+            questionActuelle++;
+            //s'il n'y a plus d'autre question enlève la flèche suivante et affiche un message box
+            if (questionActuelle >= QuestionsAll.Count)
             {
                 picBoxRight.Visible = false;
-                MessageBox.Show("Il n'y a plus de nouvelle question. Vous allez être redirigé vers la page des scores...", "Toute bonne chose à une fin...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Il n'y a n'y a plus d'autre questions, vous allez être redirigez vers le tableau des scores");
+                //Show tableau des scores 
+                RefToJouer.Show();
+                this.Close();
             }
             else
             {
-                lblQuestion.Text = question[numQuestion, 0];
-                var lblReponse = new List<Label>() { lblRep1, lblRep2, lblRep3, lblRep4 };
-                for (int i = 1; i <= 4; i++)
+                //permet de cliquer à nouveau sur les réponses
+                labelClicked = false;
+
+                lblQuestion.Text = QuestionsAll[questionActuelle].question;
+                GenerationReponse();
+                //affiche le joueur suivant et reset le compteur s'il n'y a plus de nouveaux joueur
+                if (numJoueurActuel < nbJoueurMax-1)
                 {
-                    lblReponse[i - 1].Text = question[numQuestion, i];
-                    lblReponse[i - 1].ForeColor = Color.Black;
+                    numJoueurActuel++;
+                    lblJoueur.Text = Player.listPlayer[numJoueurActuel].Nom;
                 }
-                int bonneReponse = Convert.ToInt32(question[numQuestion, 5]);
-                lblReponse[bonneReponse - 1].ForeColor = Color.Green;
-                numQuestion++;
-            }           
-        }
-
-        private void ShowDuo()
-        {
-            int bonneReponse = Convert.ToInt32(question[numQuestion, 5]);
-            Random pair = new Random();
-            int test = Convert.ToInt32(pair.Next(0, 1001));
-            if (test % 2 == 0) //test si le chiffre est pair
-            {
-                //rendre aléatoire l'affiche des réponses quand on a deux choix...
+                else
+                {
+                    numJoueurActuel = 0;
+                    lblJoueur.Text = Player.listPlayer[numJoueurActuel].Nom;
+                }
             }
-
         }
+
 
         private void btnRepCarre_Click(object sender, EventArgs e)
         {
-            tblCarre.Visible = true;
-            btnRepCarre.Visible = false;
+            panelChoixReponse.Visible = false;
+            tableCarre.Visible = true;
+            GenerationReponse();
         }
 
-        private void btnRepDuo_Click(object sender, EventArgs e)
-        {
-            tblDuo.Visible = true;
-            btnRepDuo.Visible = false;
-            ShowDuo();            
-        }
 
         private void CultureGenerale_Load(object sender, EventArgs e)
         {
-
-
             //initialise le tableau pour le questionnaire grâce au fichier JSON
-            using (StreamReader strReader = new StreamReader(path))
+            //using (StreamReader sr = new StreamReader(path, Encoding.Latin1))
+            using (StreamReader sr = new StreamReader(path))
             {
-                string json = strReader.ReadToEnd();
-                lblJason.Text = json;
+                jsonData = sr.ReadToEnd();
             }
+            QuestionsAll = JsonConvert.DeserializeObject<List<Question>>(jsonData);
+
+            //load la première question
+            lblQuestion.Text = QuestionsAll[questionActuelle].question;
+            //compte le nombre total de joueur
+            nbJoueurMax = Player.listPlayer.Count;
+            numJoueurActuel = 0;
+            //affiche le premier joueur
+            lblJoueur.Text = Player.listPlayer[numJoueurActuel].Nom;
+        }
+
+        private void btnRepCash_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenerationReponse()
+        {
+            //génère un tableau des 4 contrôles pour afficher les réponses
+            TableLayoutControlCollection controls = tableCarre.Controls;
+
+            //permet de cliquer à nouveau sur les label pour contrôler les réponse
+            //labelClicked = false;
+
+            //Créer un objet de type question en fonction du numéro de questionActuelle depuis liste QuestionsAll
+            q = QuestionsAll[questionActuelle];
+
+            //pour chaque contrôle affiche la réponse associée
+            int i = 0;//permet d'itérer dans le tableau answers[] associé à la question pour afficher chaque réponse
+            foreach (Control item in controls)
+            {
+                item.Text = q.answers[i];
+                item.ForeColor = Color.Black;
+                i++;
+            }
+        }
+
+        private void lblRep1_Click(object sender, EventArgs e)
+        {
+            while (!labelClicked)
+            {
+                //récupère le texte du label qui a été cliqué et envoie le string pour contrôle de la réponse
+                if (CheckReponse((sender as Label).Text))
+                {
+                    BonneReponse(sender);
+                }
+                else
+                {
+                    MauvaiseReponse(sender);
+                }
+                //empêche de clicker à nouveau sur d'autre réponse.
+                labelClicked = true;
+            }            
+        }
+
+        private bool CheckReponse(string text)
+        {
+            bool estJuste;
+            //retourne la bonne réponse 
+            string correctAnswer = q.answers[q.correct_answer - 1];
+
+            //compare le label cliqué et la bonne réponse
+            if (text == correctAnswer)
+            {
+                estJuste = true;
+            }
+            else
+            {
+                estJuste = false;
+            }
+            return estJuste;
+        }
+
+        private void BonneReponse(object sender)
+        {
+            (sender as Label).ForeColor = Color.FromArgb(0, 192, 0);
+            //point du joueur ++;
+            Player.listPlayer[numJoueurActuel].Score++;
+        }
+
+        private void MauvaiseReponse(object sender)
+        {
+            (sender as Label).ForeColor = Color.FromArgb(192, 0, 0);
         }
     }
 }

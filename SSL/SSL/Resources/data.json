@@ -1,0 +1,35 @@
+[
+  {
+    "number": 1,
+    "question": "Quelle est le nom de la 4e couche OSI ?",
+    "answers": [
+      "Session",
+      "Transport",
+      "Presentation",
+      "Réseau"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "number": 2,
+    "question": "En quelle année Genève a rejoint la Suisse ? ",
+    "answers": [
+      "1813",
+      "1815",
+      "1817",
+      "1819"
+    ],
+    "correct_answer": 2
+  },
+  {
+    "number": 3,
+    "question": "Ceci est la question 3 ",
+    "answers": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct_answer": 3
+  }
+]

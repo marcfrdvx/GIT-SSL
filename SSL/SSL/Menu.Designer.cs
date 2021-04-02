@@ -130,7 +130,7 @@ namespace SSL
             this.btnScore.TabIndex = 0;
             this.btnScore.Text = "Score";
             this.btnScore.UseVisualStyleBackColor = true;
-            this.btnScore.Click += new System.EventHandler(this.btnQuitter_Click);
+            this.btnScore.Click += new System.EventHandler(this.btnScore_Click);
             // 
             // Menu
             // 

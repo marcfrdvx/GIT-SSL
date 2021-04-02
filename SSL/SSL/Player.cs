@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace SSL
 {
+
     public class Player
     {
+        public static List<Player> listPlayer = new List<Player>();
+
         // Variables internes
         private string _nom;
         private int _score;
         private string _team;
+       
 
         // Proprietes
         public string Nom

@@ -12,3 +12,21 @@ C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.Menu.resources
 C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.Joueur.resources
 C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.Jouer.resources
 C:\Users\Administrateur\Documents\GIT\SSL\SSL\obj\Debug\SSL.CultureGenerale.resources
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\bin\Debug\SSL.exe.config
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\bin\Debug\SSL.exe
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\bin\Debug\SSL.pdb
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\bin\Debug\Newtonsoft.Json.dll
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\bin\Debug\Newtonsoft.Json.xml
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.csprojAssemblyReference.cache
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.CultureGenerale.resources
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.Jouer.resources
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.Joueur.resources
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.MainBackground.resources
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.Menu.resources
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.Properties.Resources.resources
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.csproj.GenerateResource.cache
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.csproj.CoreCompileInputs.cache
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.csproj.CopyComplete
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.exe
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.pdb
+D:\Ecole\3e\C#\GIT-SSL-main (1)\GIT-SSL-main\SSL\SSL\obj\Debug\SSL.Score.resources

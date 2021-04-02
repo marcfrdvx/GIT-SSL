@@ -12,6 +12,8 @@ namespace SSL
 {
     public partial class Menu : Form
     {
+        public List<Player> listPlayer;
+
         public Menu()
         {
             InitializeComponent();
@@ -46,6 +48,13 @@ namespace SSL
             frmJouer.Show();
             this.Hide();
 
+        }
+
+        private void btnScore_Click(object sender, EventArgs e)
+        {
+            Score frmScore = new Score(this);
+            frmScore.Show();
+            this.Hide();
         }
     }
 }

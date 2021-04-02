@@ -12,7 +12,6 @@ namespace SSL
 {
     public partial class Joueur : Form
     {
-        public List<Player> listPlayer = new List<Player>();
         /// <summary>
         /// La forme de référence principale
         /// </summary>
@@ -39,12 +38,12 @@ namespace SSL
             //Créer le joueur
             Player j = new Player(tbxAddPlayer.Text);
             //Le stock dans la liste de joueurs
-            listPlayer.Add(j);
+            Player.listPlayer.Add(j);
 
             //supprime l'affichage du tableau
             flowPanelJoueur.Controls.Clear();
             //affiche chaque joueur dans le tableau
-            foreach (var Player in listPlayer)
+            foreach (var Player in Player.listPlayer)
             {
                 Label lbl = new Label();
                 lbl.Text = Player.ToString();
@@ -61,8 +60,24 @@ namespace SSL
         private void btnDeleteAllPlayer_Click(object sender, EventArgs e)
         {
             //Supprime tous les joueurs (objet + liste)
-            listPlayer.Clear();
+            Player.listPlayer.Clear();
             flowPanelJoueur.Controls.Clear();
+        }
+
+        private void Joueur_Load(object sender, EventArgs e)
+        {
+            //affiche les joueurs existants au chargement de la page
+            if (Player.listPlayer.Count != 0)
+            {
+                foreach (var Player in Player.listPlayer)
+                {
+                    Label lbl = new Label();
+                    lbl.Text = Player.ToString();
+                    lbl.AutoSize = true;
+                    flowPanelJoueur.Controls.Add(lbl);
+                }
+            }
+            
         }
     }
 }
