@@ -42,9 +42,9 @@ namespace SSL
             this.lblRep1 = new System.Windows.Forms.Label();
             this.lblRep3 = new System.Windows.Forms.Label();
             this.panelRepCash = new System.Windows.Forms.Panel();
+            this.btnCashCorrect = new System.Windows.Forms.Button();
             this.lblRepCash = new System.Windows.Forms.Label();
             this.lblNumQuestion = new System.Windows.Forms.Label();
-            this.btnCashCorrect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRight)).BeginInit();
             this.panelChoixReponse.SuspendLayout();
             this.tableCarre.SuspendLayout();
@@ -103,6 +103,7 @@ namespace SSL
             // 
             // picBoxRight
             // 
+            this.picBoxRight.Enabled = false;
             this.picBoxRight.Image = global::SSL.Properties.Resources.right_arrow;
             this.picBoxRight.Location = new System.Drawing.Point(1168, 12);
             this.picBoxRight.Name = "picBoxRight";
@@ -198,6 +199,16 @@ namespace SSL
             this.panelRepCash.TabIndex = 12;
             this.panelRepCash.Visible = false;
             // 
+            // btnCashCorrect
+            // 
+            this.btnCashCorrect.Location = new System.Drawing.Point(168, 135);
+            this.btnCashCorrect.Name = "btnCashCorrect";
+            this.btnCashCorrect.Size = new System.Drawing.Size(169, 48);
+            this.btnCashCorrect.TabIndex = 3;
+            this.btnCashCorrect.Text = "Correct";
+            this.btnCashCorrect.UseVisualStyleBackColor = true;
+            this.btnCashCorrect.Click += new System.EventHandler(this.btnCashCorrect_Click);
+            // 
             // lblRepCash
             // 
             this.lblRepCash.AutoSize = true;
@@ -218,16 +229,6 @@ namespace SSL
             this.lblNumQuestion.Size = new System.Drawing.Size(50, 31);
             this.lblNumQuestion.TabIndex = 2;
             this.lblNumQuestion.Text = "1/x";
-            // 
-            // btnCashCorrect
-            // 
-            this.btnCashCorrect.Location = new System.Drawing.Point(168, 135);
-            this.btnCashCorrect.Name = "btnCashCorrect";
-            this.btnCashCorrect.Size = new System.Drawing.Size(169, 48);
-            this.btnCashCorrect.TabIndex = 3;
-            this.btnCashCorrect.Text = "Correct";
-            this.btnCashCorrect.UseVisualStyleBackColor = true;
-            this.btnCashCorrect.Click += new System.EventHandler(this.btnCashCorrect_Click);
             // 
             // CultureGenerale
             // 

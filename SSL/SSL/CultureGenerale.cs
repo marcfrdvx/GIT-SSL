@@ -58,6 +58,7 @@ namespace SSL
             panelChoixReponse.Visible = true;
             tableCarre.Visible = false;
             panelRepCash.Visible = false;
+            picBoxRight.Enabled = false;
             
 
 
@@ -69,7 +70,7 @@ namespace SSL
                 panelChoixReponse.Visible = false;
                 picBoxRight.Visible = false;
                 lblQuestion.Text = "";
-                MessageBox.Show("Il n'y a n'y a plus d'autre questions, vous allez être redirigez vers le tableau des scores");
+                MessageBox.Show("Il n'y a n'y a plus d'autre questions, vous allez être redirigez vers le tableau des scores","Vous avez terminé ce jeu",MessageBoxButtons.OK,MessageBoxIcon.None);
                 //Show tableau des scores 
                 Menu menu = new Menu();
                 Score score = new Score(menu);
@@ -140,6 +141,7 @@ namespace SSL
 
             GenerationReponse();
             lblRepCash.Text = q.answers[q.correct_answer -1];
+            picBoxRight.Enabled = true;
         }
 
         private void GenerationReponse()
@@ -178,7 +180,8 @@ namespace SSL
                 }
                 //empêche de clicker à nouveau sur d'autre réponse.
                 labelClicked = true;
-            }            
+            }
+            picBoxRight.Enabled = true;
         }
 
         private bool CheckReponse(string text)
