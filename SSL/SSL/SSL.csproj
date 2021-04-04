@@ -133,9 +133,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\data - Copier %282%29.json" />
-    <None Include="Resources\data - Copier.json" />
-    <None Include="Resources\data2.json" />
     <None Include="Resources\logoSSL.png" />
   </ItemGroup>
   <ItemGroup>

@@ -67,7 +67,10 @@ namespace SSL
             this.tbxAddPlayer.Name = "tbxAddPlayer";
             this.tbxAddPlayer.Size = new System.Drawing.Size(248, 20);
             this.tbxAddPlayer.TabIndex = 3;
-            this.tbxAddPlayer.Text = "Ajouter un joueur";
+            this.tbxAddPlayer.Click += new System.EventHandler(this.tbxAddPlayer_Click);
+            this.tbxAddPlayer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxAddPlayer_KeyDown);
+            this.tbxAddPlayer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxAddPlayer_KeyPress);
+            this.tbxAddPlayer.Leave += new System.EventHandler(this.tbxAddPlayer_Leave);
             // 
             // picBoxAddPlayer
             // 
@@ -79,7 +82,8 @@ namespace SSL
             this.picBoxAddPlayer.TabIndex = 5;
             this.picBoxAddPlayer.TabStop = false;
             this.picBoxAddPlayer.Click += new System.EventHandler(this.picBoxAddPlayer_Click);
-            this.picBoxAddPlayer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picBoxAddPlayer_MouseMove);
+            this.picBoxAddPlayer.MouseEnter += new System.EventHandler(this.picBoxAddPlayer_MouseEnter);
+            this.picBoxAddPlayer.MouseLeave += new System.EventHandler(this.picBoxAddPlayer_MouseLeave);
             // 
             // pictureBox1
             // 

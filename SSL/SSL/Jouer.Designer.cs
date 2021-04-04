@@ -34,8 +34,6 @@ namespace SSL
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.picBoxCG = new System.Windows.Forms.PictureBox();
-            this.btnGetQuestion = new System.Windows.Forms.Button();
-            this.rtbxQuestions = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,32 +89,12 @@ namespace SSL
             this.picBoxCG.TabStop = false;
             this.picBoxCG.Click += new System.EventHandler(this.picBoxCG_Click);
             // 
-            // btnGetQuestion
-            // 
-            this.btnGetQuestion.Location = new System.Drawing.Point(786, 113);
-            this.btnGetQuestion.Name = "btnGetQuestion";
-            this.btnGetQuestion.Size = new System.Drawing.Size(124, 58);
-            this.btnGetQuestion.TabIndex = 4;
-            this.btnGetQuestion.Text = "Get questions";
-            this.btnGetQuestion.UseVisualStyleBackColor = true;
-            this.btnGetQuestion.Click += new System.EventHandler(this.btnGetQuestion_Click);
-            // 
-            // rtbxQuestions
-            // 
-            this.rtbxQuestions.Location = new System.Drawing.Point(215, 360);
-            this.rtbxQuestions.Name = "rtbxQuestions";
-            this.rtbxQuestions.Size = new System.Drawing.Size(670, 163);
-            this.rtbxQuestions.TabIndex = 5;
-            this.rtbxQuestions.Text = "";
-            // 
             // Jouer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.rtbxQuestions);
-            this.Controls.Add(this.btnGetQuestion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.picBoxCG);
@@ -140,7 +118,5 @@ namespace SSL
         private System.Windows.Forms.PictureBox picBoxCG;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnGetQuestion;
-        private System.Windows.Forms.RichTextBox rtbxQuestions;
     }
 }

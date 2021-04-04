@@ -29,6 +29,9 @@ namespace SSL
 
         public int nbJoueurMax;
         public int numJoueurActuel;
+        public string numQuestionAffichage = "";
+        //lblNumQuestion.Text = "1/"+QuestionsAll.Count;
+
 
         //référence pour revenir au menu précédent (Jouer)
         private Jouer RefToJouer;
@@ -51,19 +54,34 @@ namespace SSL
 
         private void NextQuestion()
         {
+            //remet l'affichage à zéro
+            panelChoixReponse.Visible = true;
+            tableCarre.Visible = false;
+            panelRepCash.Visible = false;
+            
+
+
             //Affiche la prochaine question
             questionActuelle++;
             //s'il n'y a plus d'autre question enlève la flèche suivante et affiche un message box
             if (questionActuelle >= QuestionsAll.Count)
             {
+                panelChoixReponse.Visible = false;
                 picBoxRight.Visible = false;
+                lblQuestion.Text = "";
                 MessageBox.Show("Il n'y a n'y a plus d'autre questions, vous allez être redirigez vers le tableau des scores");
                 //Show tableau des scores 
-                RefToJouer.Show();
+                Menu menu = new Menu();
+                Score score = new Score(menu);
+                score.Show();
                 this.Close();
             }
             else
             {
+                //màj du compteur de questions
+                numQuestionAffichage = Convert.ToString(questionActuelle + 1) + "/" + QuestionsAll.Count;
+                lblNumQuestion.Text = numQuestionAffichage;
+
                 //permet de cliquer à nouveau sur les réponses
                 labelClicked = false;
 
@@ -104,6 +122,9 @@ namespace SSL
 
             //load la première question
             lblQuestion.Text = QuestionsAll[questionActuelle].question;
+            //màj du compteur de questions
+            numQuestionAffichage = Convert.ToString(questionActuelle+1) + "/" + QuestionsAll.Count;
+            lblNumQuestion.Text = numQuestionAffichage;
             //compte le nombre total de joueur
             nbJoueurMax = Player.listPlayer.Count;
             numJoueurActuel = 0;
@@ -113,7 +134,12 @@ namespace SSL
 
         private void btnRepCash_Click(object sender, EventArgs e)
         {
+            //gère l'affichage
+            panelChoixReponse.Visible = false;
+            panelRepCash.Visible = true;
 
+            GenerationReponse();
+            lblRepCash.Text = q.answers[q.correct_answer -1];
         }
 
         private void GenerationReponse()
@@ -176,13 +202,20 @@ namespace SSL
         private void BonneReponse(object sender)
         {
             (sender as Label).ForeColor = Color.FromArgb(0, 192, 0);
-            //point du joueur ++;
+            //point du joueur +1;
             Player.listPlayer[numJoueurActuel].Score++;
         }
 
         private void MauvaiseReponse(object sender)
         {
             (sender as Label).ForeColor = Color.FromArgb(192, 0, 0);
+        }
+
+        private void btnCashCorrect_Click(object sender, EventArgs e)
+        {
+            //point du joueur +3;
+            Player.listPlayer[numJoueurActuel].Score += 3;
+            NextQuestion();
         }
     }
 }

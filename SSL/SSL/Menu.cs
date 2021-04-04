@@ -29,12 +29,6 @@ namespace SSL
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //fonction de test pour le background
-            this.Hide();
-        }
-
         private void btnJoueur_Click(object sender, EventArgs e)
         {
             Joueur frmJoueur = new Joueur(this);

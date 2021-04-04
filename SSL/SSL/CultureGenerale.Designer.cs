@@ -41,9 +41,14 @@ namespace SSL
             this.lblRep2 = new System.Windows.Forms.Label();
             this.lblRep1 = new System.Windows.Forms.Label();
             this.lblRep3 = new System.Windows.Forms.Label();
+            this.panelRepCash = new System.Windows.Forms.Panel();
+            this.lblRepCash = new System.Windows.Forms.Label();
+            this.lblNumQuestion = new System.Windows.Forms.Label();
+            this.btnCashCorrect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRight)).BeginInit();
             this.panelChoixReponse.SuspendLayout();
             this.tableCarre.SuspendLayout();
+            this.panelRepCash.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRetour
@@ -60,7 +65,7 @@ namespace SSL
             // 
             this.lblJoueur.AutoSize = true;
             this.lblJoueur.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJoueur.Location = new System.Drawing.Point(453, 104);
+            this.lblJoueur.Location = new System.Drawing.Point(531, 38);
             this.lblJoueur.Name = "lblJoueur";
             this.lblJoueur.Size = new System.Drawing.Size(190, 31);
             this.lblJoueur.TabIndex = 2;
@@ -90,7 +95,7 @@ namespace SSL
             // 
             this.lblQuestion.AutoSize = true;
             this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuestion.Location = new System.Drawing.Point(14, 190);
+            this.lblQuestion.Location = new System.Drawing.Point(23, 166);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(168, 42);
             this.lblQuestion.TabIndex = 2;
@@ -99,7 +104,7 @@ namespace SSL
             // picBoxRight
             // 
             this.picBoxRight.Image = global::SSL.Properties.Resources.right_arrow;
-            this.picBoxRight.Location = new System.Drawing.Point(1131, 85);
+            this.picBoxRight.Location = new System.Drawing.Point(1168, 12);
             this.picBoxRight.Name = "picBoxRight";
             this.picBoxRight.Size = new System.Drawing.Size(100, 50);
             this.picBoxRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -126,7 +131,7 @@ namespace SSL
             this.tableCarre.Controls.Add(this.lblRep1, 0, 0);
             this.tableCarre.Controls.Add(this.lblRep3, 0, 1);
             this.tableCarre.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tableCarre.Location = new System.Drawing.Point(12, 391);
+            this.tableCarre.Location = new System.Drawing.Point(231, 349);
             this.tableCarre.Name = "tableCarre";
             this.tableCarre.RowCount = 2;
             this.tableCarre.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -183,16 +188,59 @@ namespace SSL
             this.lblRep3.Text = "rep3";
             this.lblRep3.Click += new System.EventHandler(this.lblRep1_Click);
             // 
+            // panelRepCash
+            // 
+            this.panelRepCash.Controls.Add(this.btnCashCorrect);
+            this.panelRepCash.Controls.Add(this.lblRepCash);
+            this.panelRepCash.Location = new System.Drawing.Point(384, 434);
+            this.panelRepCash.Name = "panelRepCash";
+            this.panelRepCash.Size = new System.Drawing.Size(512, 183);
+            this.panelRepCash.TabIndex = 12;
+            this.panelRepCash.Visible = false;
+            // 
+            // lblRepCash
+            // 
+            this.lblRepCash.AutoSize = true;
+            this.lblRepCash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblRepCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRepCash.Location = new System.Drawing.Point(3, 0);
+            this.lblRepCash.Name = "lblRepCash";
+            this.lblRepCash.Size = new System.Drawing.Size(155, 31);
+            this.lblRepCash.TabIndex = 2;
+            this.lblRepCash.Text = "lblRepCash";
+            // 
+            // lblNumQuestion
+            // 
+            this.lblNumQuestion.AutoSize = true;
+            this.lblNumQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumQuestion.Location = new System.Drawing.Point(1194, 74);
+            this.lblNumQuestion.Name = "lblNumQuestion";
+            this.lblNumQuestion.Size = new System.Drawing.Size(50, 31);
+            this.lblNumQuestion.TabIndex = 2;
+            this.lblNumQuestion.Text = "1/x";
+            // 
+            // btnCashCorrect
+            // 
+            this.btnCashCorrect.Location = new System.Drawing.Point(168, 135);
+            this.btnCashCorrect.Name = "btnCashCorrect";
+            this.btnCashCorrect.Size = new System.Drawing.Size(169, 48);
+            this.btnCashCorrect.TabIndex = 3;
+            this.btnCashCorrect.Text = "Correct";
+            this.btnCashCorrect.UseVisualStyleBackColor = true;
+            this.btnCashCorrect.Click += new System.EventHandler(this.btnCashCorrect_Click);
+            // 
             // CultureGenerale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.panelRepCash);
             this.Controls.Add(this.tableCarre);
             this.Controls.Add(this.panelChoixReponse);
             this.Controls.Add(this.picBoxRight);
             this.Controls.Add(this.lblQuestion);
+            this.Controls.Add(this.lblNumQuestion);
             this.Controls.Add(this.lblJoueur);
             this.Controls.Add(this.btnRetour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -205,6 +253,8 @@ namespace SSL
             this.panelChoixReponse.ResumeLayout(false);
             this.tableCarre.ResumeLayout(false);
             this.tableCarre.PerformLayout();
+            this.panelRepCash.ResumeLayout(false);
+            this.panelRepCash.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,10 +269,14 @@ namespace SSL
         private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.PictureBox picBoxRight;
         private System.Windows.Forms.Panel panelChoixReponse;
-        public System.Windows.Forms.TableLayoutPanel tableCarre;
         private System.Windows.Forms.Label lblRep2;
         private System.Windows.Forms.Label lblRep3;
         private System.Windows.Forms.Label lblRep4;
         private System.Windows.Forms.Label lblRep1;
+        private System.Windows.Forms.TableLayoutPanel tableCarre;
+        private System.Windows.Forms.Panel panelRepCash;
+        private System.Windows.Forms.Label lblRepCash;
+        private System.Windows.Forms.Label lblNumQuestion;
+        private System.Windows.Forms.Button btnCashCorrect;
     }
 }

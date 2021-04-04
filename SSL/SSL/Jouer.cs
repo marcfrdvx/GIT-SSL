@@ -32,20 +32,6 @@ namespace SSL
             this.Close();
         }
 
-        //bouton test
-        private void btnGetQuestion_Click(object sender, EventArgs e)
-        {
-            string jsonData = "";
-            using (StreamReader strReader = new StreamReader(path))
-            {
-                jsonData = strReader.ReadToEnd();
-            }
-
-            Question[][] mesQuestions = JsonConvert.DeserializeObject<Question[][]>(jsonData);
-
-            rtbxQuestions.AppendText(mesQuestions.Length + mesQuestions.ToString());           
-        }
-
         private void picBoxCG_Click(object sender, EventArgs e)
         {
             //s'il n'y a aucun jouer de créé

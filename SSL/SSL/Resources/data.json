@@ -23,13 +23,13 @@
   },
   {
     "number": 3,
-    "question": "Ceci est la question 3 ",
+    "question": "Combien de temps a duré la guerre de 100 ans ?",
     "answers": [
-      "1",
-      "2",
-      "3",
-      "4"
+      "100",
+      "166",
+      "99",
+      "105"
     ],
-    "correct_answer": 3
+    "correct_answer": 2
   }
 ]
