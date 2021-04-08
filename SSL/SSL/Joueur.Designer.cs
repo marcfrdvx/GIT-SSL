@@ -30,14 +30,14 @@ namespace SSL
         private void InitializeComponent()
         {
             this.btnRetour = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblListeJoueur = new System.Windows.Forms.Label();
             this.tbxAddPlayer = new System.Windows.Forms.TextBox();
             this.picBoxAddPlayer = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.flowPanelJoueur = new System.Windows.Forms.FlowLayoutPanel();
             this.btnDeleteAllPlayer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAddPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRetour
@@ -50,16 +50,17 @@ namespace SSL
             this.btnRetour.UseVisualStyleBackColor = true;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
-            // label1
+            // lblListeJoueur
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Broadway", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(474, 305);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 36);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Liste des Joueurs";
+            this.lblListeJoueur.AutoSize = true;
+            this.lblListeJoueur.Font = new System.Drawing.Font("Broadway", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListeJoueur.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblListeJoueur.Location = new System.Drawing.Point(474, 305);
+            this.lblListeJoueur.Margin = new System.Windows.Forms.Padding(3);
+            this.lblListeJoueur.Name = "lblListeJoueur";
+            this.lblListeJoueur.Size = new System.Drawing.Size(325, 36);
+            this.lblListeJoueur.TabIndex = 2;
+            this.lblListeJoueur.Text = "Liste des Joueurs";
             // 
             // tbxAddPlayer
             // 
@@ -85,15 +86,15 @@ namespace SSL
             this.picBoxAddPlayer.MouseEnter += new System.EventHandler(this.picBoxAddPlayer_MouseEnter);
             this.picBoxAddPlayer.MouseLeave += new System.EventHandler(this.picBoxAddPlayer_MouseLeave);
             // 
-            // pictureBox1
+            // picBoxLogo
             // 
-            this.pictureBox1.Image = global::SSL.Properties.Resources.logoSSL;
-            this.pictureBox1.Location = new System.Drawing.Point(462, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(356, 290);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.picBoxLogo.Image = global::SSL.Properties.Resources.logoSSL;
+            this.picBoxLogo.Location = new System.Drawing.Point(462, 12);
+            this.picBoxLogo.Name = "picBoxLogo";
+            this.picBoxLogo.Size = new System.Drawing.Size(356, 290);
+            this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxLogo.TabIndex = 1;
+            this.picBoxLogo.TabStop = false;
             // 
             // flowPanelJoueur
             // 
@@ -124,8 +125,8 @@ namespace SSL
             this.Controls.Add(this.btnDeleteAllPlayer);
             this.Controls.Add(this.picBoxAddPlayer);
             this.Controls.Add(this.tbxAddPlayer);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblListeJoueur);
+            this.Controls.Add(this.picBoxLogo);
             this.Controls.Add(this.btnRetour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Joueur";
@@ -134,7 +135,7 @@ namespace SSL
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Joueur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAddPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,8 +144,8 @@ namespace SSL
         #endregion
 
         private System.Windows.Forms.Button btnRetour;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox picBoxLogo;
+        private System.Windows.Forms.Label lblListeJoueur;
         private System.Windows.Forms.TextBox tbxAddPlayer;
         private System.Windows.Forms.PictureBox picBoxAddPlayer;
         private System.Windows.Forms.FlowLayoutPanel flowPanelJoueur;

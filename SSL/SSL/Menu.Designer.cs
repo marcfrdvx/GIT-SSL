@@ -32,16 +32,16 @@ namespace SSL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.btnQuitter = new System.Windows.Forms.Button();
             this.picBoxLogo = new System.Windows.Forms.PictureBox();
-            this.tblButton = new System.Windows.Forms.TableLayoutPanel();
             this.btnJoueur = new System.Windows.Forms.Button();
             this.btnJouer = new System.Windows.Forms.Button();
             this.btnScore = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
-            this.tblButton.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnQuitter
             // 
+            this.btnQuitter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.Location = new System.Drawing.Point(1126, 12);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(142, 58);
@@ -52,36 +52,24 @@ namespace SSL
             // 
             // picBoxLogo
             // 
+            this.picBoxLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picBoxLogo.BackColor = System.Drawing.Color.Transparent;
             this.picBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLogo.Image")));
-            this.picBoxLogo.Location = new System.Drawing.Point(240, 0);
+            this.picBoxLogo.Location = new System.Drawing.Point(465, 50);
             this.picBoxLogo.Name = "picBoxLogo";
-            this.picBoxLogo.Size = new System.Drawing.Size(778, 667);
-            this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBoxLogo.Size = new System.Drawing.Size(406, 377);
+            this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxLogo.TabIndex = 2;
             this.picBoxLogo.TabStop = false;
             // 
-            // tblButton
-            // 
-            this.tblButton.ColumnCount = 3;
-            this.tblButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblButton.Controls.Add(this.btnJoueur, 0, 0);
-            this.tblButton.Controls.Add(this.btnJouer, 1, 0);
-            this.tblButton.Controls.Add(this.btnScore, 2, 0);
-            this.tblButton.Location = new System.Drawing.Point(199, 599);
-            this.tblButton.Name = "tblButton";
-            this.tblButton.RowCount = 1;
-            this.tblButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblButton.Size = new System.Drawing.Size(860, 84);
-            this.tblButton.TabIndex = 3;
-            // 
             // btnJoueur
             // 
-            this.btnJoueur.Location = new System.Drawing.Point(3, 3);
+            this.btnJoueur.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnJoueur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJoueur.Location = new System.Drawing.Point(420, 463);
+            this.btnJoueur.Margin = new System.Windows.Forms.Padding(0);
             this.btnJoueur.Name = "btnJoueur";
-            this.btnJoueur.Size = new System.Drawing.Size(280, 76);
+            this.btnJoueur.Size = new System.Drawing.Size(150, 80);
             this.btnJoueur.TabIndex = 0;
             this.btnJoueur.Text = "Joueur";
             this.btnJoueur.UseVisualStyleBackColor = true;
@@ -89,9 +77,12 @@ namespace SSL
             // 
             // btnJouer
             // 
-            this.btnJouer.Location = new System.Drawing.Point(289, 3);
+            this.btnJouer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnJouer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJouer.Location = new System.Drawing.Point(597, 463);
+            this.btnJouer.Margin = new System.Windows.Forms.Padding(0);
             this.btnJouer.Name = "btnJouer";
-            this.btnJouer.Size = new System.Drawing.Size(280, 76);
+            this.btnJouer.Size = new System.Drawing.Size(150, 80);
             this.btnJouer.TabIndex = 0;
             this.btnJouer.Text = "Jouer";
             this.btnJouer.UseVisualStyleBackColor = true;
@@ -99,9 +90,12 @@ namespace SSL
             // 
             // btnScore
             // 
-            this.btnScore.Location = new System.Drawing.Point(575, 3);
+            this.btnScore.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScore.Location = new System.Drawing.Point(782, 463);
+            this.btnScore.Margin = new System.Windows.Forms.Padding(0);
             this.btnScore.Name = "btnScore";
-            this.btnScore.Size = new System.Drawing.Size(280, 76);
+            this.btnScore.Size = new System.Drawing.Size(150, 80);
             this.btnScore.TabIndex = 0;
             this.btnScore.Text = "Score";
             this.btnScore.UseVisualStyleBackColor = true;
@@ -113,17 +107,18 @@ namespace SSL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.btnScore);
+            this.Controls.Add(this.btnJouer);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.tblButton);
+            this.Controls.Add(this.btnJoueur);
             this.Controls.Add(this.picBoxLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
-            this.tblButton.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -131,7 +126,6 @@ namespace SSL
 
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.PictureBox picBoxLogo;
-        private System.Windows.Forms.TableLayoutPanel tblButton;
         private System.Windows.Forms.Button btnJoueur;
         private System.Windows.Forms.Button btnJouer;
         private System.Windows.Forms.Button btnScore;

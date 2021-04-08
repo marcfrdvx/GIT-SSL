@@ -12,12 +12,23 @@ namespace SSL
 {
     public partial class Score : Form
     {
+        //autoscale
+        public float newWidth;
+        public float newHeight;
+        public float originalWidth = 1280;
+        public float originalHeight = 720;
+        public Point tblScoreOldLocation;
+
+
         private Menu RefToMain;
 
         public Score(Menu frm)
         {
             RefToMain = frm;
             InitializeComponent();
+            //autoscale
+            tblScoreOldLocation = tblScore.Location;
+
         }
 
         private void btnRetour_Click(object sender, EventArgs e)
@@ -28,6 +39,11 @@ namespace SSL
 
         private void Score_Load(object sender, EventArgs e)
         {
+            newWidth = this.Width;
+            newHeight = this.Height;
+            ResizeControls();
+
+
             //Affiche le tableau des scores
             Afficherscore();
         }
@@ -75,7 +91,40 @@ namespace SSL
         //en test pour repeindre les 3 premières case pour le classement
         private void tblScore_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
-            
+            /*
+             * Doit être implémenté ultérieurement
+             */
+
         }
+
+        private void ResizeControls()
+        {
+            float scaleFactorWidth = originalWidth / newWidth;
+            float scaleFactorHeight = originalHeight / newHeight;
+            Control.ControlCollection controlCollection = this.Controls;
+
+            foreach (Control item in controlCollection)
+            {
+                //Point oldLocation = item.Location;
+                //if (item.GetType() == typeof(Button)){}                
+                item.Size = new Size(Convert.ToInt32(item.Size.Width / scaleFactorWidth), Convert.ToInt32(item.Size.Height / scaleFactorHeight));
+                item.Font = new Font(item.Font.FontFamily, item.Font.Size / scaleFactorHeight);
+            }
+            btnResetScore.Left = Convert.ToInt32(newWidth - btnResetScore.Width - 25);
+            picBoxTrophy.Location = new Point((this.Width - picBoxTrophy.Width) / 2, Convert.ToInt32(50 / scaleFactorHeight));
+            tblScore.Location = new Point(Convert.ToInt32(tblScoreOldLocation.X / scaleFactorHeight), Convert.ToInt32(tblScoreOldLocation.Y / scaleFactorHeight));
+
+            TableLayoutColumnStyleCollection tblScoreColumns = tblScore.ColumnStyles;
+
+            tblScoreColumns[0].SizeType = SizeType.Absolute;
+            tblScoreColumns[1].SizeType = SizeType.Absolute;
+            tblScoreColumns[2].SizeType = SizeType.Absolute;
+            tblScoreColumns[0].Width = tblScore.Width * 10 / 100;
+            tblScoreColumns[1].Width = tblScore.Width * 70 / 100;
+            tblScoreColumns[2].Width = tblScore.Width * 20 / 100;
+
+
+        }
+
     }
 }

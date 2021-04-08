@@ -103,6 +103,7 @@ namespace SSL
             // 
             // picBoxRight
             // 
+            this.picBoxRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxRight.Enabled = false;
             this.picBoxRight.Image = global::SSL.Properties.Resources.right_arrow;
             this.picBoxRight.Location = new System.Drawing.Point(1168, 12);
@@ -214,7 +215,7 @@ namespace SSL
             this.lblRepCash.AutoSize = true;
             this.lblRepCash.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRepCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRepCash.Location = new System.Drawing.Point(3, 0);
+            this.lblRepCash.Location = new System.Drawing.Point(173, 0);
             this.lblRepCash.Name = "lblRepCash";
             this.lblRepCash.Size = new System.Drawing.Size(155, 31);
             this.lblRepCash.TabIndex = 2;
@@ -222,9 +223,11 @@ namespace SSL
             // 
             // lblNumQuestion
             // 
+            this.lblNumQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNumQuestion.AutoSize = true;
             this.lblNumQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumQuestion.Location = new System.Drawing.Point(1194, 74);
+            this.lblNumQuestion.Margin = new System.Windows.Forms.Padding(3);
             this.lblNumQuestion.Name = "lblNumQuestion";
             this.lblNumQuestion.Size = new System.Drawing.Size(50, 31);
             this.lblNumQuestion.TabIndex = 2;
@@ -237,13 +240,13 @@ namespace SSL
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.panelRepCash);
-            this.Controls.Add(this.tableCarre);
             this.Controls.Add(this.panelChoixReponse);
             this.Controls.Add(this.picBoxRight);
             this.Controls.Add(this.lblQuestion);
             this.Controls.Add(this.lblNumQuestion);
             this.Controls.Add(this.lblJoueur);
             this.Controls.Add(this.btnRetour);
+            this.Controls.Add(this.tableCarre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CultureGenerale";
             this.Text = " ";

@@ -63,13 +63,13 @@ namespace SSL
             this.tblScore.ColumnCount = 3;
             this.tblScore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tblScore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tblScore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tblScore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tblScore.Location = new System.Drawing.Point(430, 287);
             this.tblScore.Margin = new System.Windows.Forms.Padding(0);
             this.tblScore.Name = "tblScore";
             this.tblScore.RowCount = 1;
             this.tblScore.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblScore.Size = new System.Drawing.Size(368, 59);
+            this.tblScore.Size = new System.Drawing.Size(371, 59);
             this.tblScore.TabIndex = 3;
             this.tblScore.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.tblScore_CellPaint);
             // 

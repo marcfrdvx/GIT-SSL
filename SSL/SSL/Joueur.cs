@@ -12,6 +12,18 @@ namespace SSL
 {
     public partial class Joueur : Form
     {
+        //autoscale
+        public float newWidth;
+        public float newHeight;
+        public float originalWidth = 1280;
+        public float originalHeight = 720;
+        public Point btnDeleteAllPlayerOldLocation;
+        public Point tbxAddPlayerOldLocation;
+        public Point picBoxAddPlayerOldLocation;
+        public Point flowPanelJoueurOldLocation;
+        public Size picBoxAddPlayerSize;
+
+
         /// <summary>
         /// La forme de référence principale
         /// </summary>
@@ -24,7 +36,12 @@ namespace SSL
         public Joueur(Menu frm)
         {
             RefToMain = frm;
-            InitializeComponent(); 
+            InitializeComponent();
+            //autoscale
+            btnDeleteAllPlayerOldLocation = btnDeleteAllPlayer.Location;
+            tbxAddPlayerOldLocation = tbxAddPlayer.Location;
+            picBoxAddPlayerOldLocation = picBoxAddPlayer.Location;
+            flowPanelJoueurOldLocation = flowPanelJoueur.Location;
         }
 
         private void btnRetour_Click(object sender, EventArgs e)
@@ -94,6 +111,13 @@ namespace SSL
             tbxAddPlayer.Font = new Font(tbxAddPlayer.Font, FontStyle.Italic);
             tbxAddPlayer.ForeColor = System.Drawing.SystemColors.ScrollBar;
 
+
+            //pour autoscale
+            newWidth = this.Width;
+            newHeight = this.Height;
+            ResizeControls();
+            picBoxAddPlayerSize = picBoxAddPlayer.Size;
+
         }
 
         private void tbxAddPlayer_Click(object sender, EventArgs e)
@@ -111,7 +135,7 @@ namespace SSL
 
         private void picBoxAddPlayer_MouseLeave(object sender, EventArgs e)
         {
-            picBoxAddPlayer.Size = new Size(45, 45);
+            picBoxAddPlayer.Size = picBoxAddPlayerSize;
         }
 
         private void tbxAddPlayer_Leave(object sender, EventArgs e)
@@ -162,5 +186,30 @@ namespace SSL
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
+        private void ResizeControls()
+        {
+            float scaleFactorWidth = originalWidth / newWidth;
+            float scaleFactorHeight = originalHeight / newHeight;
+            Control.ControlCollection controlCollection = this.Controls;
+
+            foreach (Control item in controlCollection)
+            {
+                //Point oldLocation = item.Location;
+                //if (item.GetType() == typeof(Button)){}                
+                item.Size = new Size(Convert.ToInt32(item.Size.Width / scaleFactorWidth), Convert.ToInt32(item.Size.Height / scaleFactorHeight));
+                item.Font = new Font(item.Font.FontFamily, item.Font.Size / scaleFactorHeight);
+            }
+            //btnQuitter.Left = Convert.ToInt32(newWidth - btnQuitter.Width - 25);
+            picBoxLogo.Location = new Point((this.Width - picBoxLogo.Width) / 2, Convert.ToInt32(50 / scaleFactorHeight));
+            lblListeJoueur.Location = new Point((this.Width - lblListeJoueur.Width) / 2, Convert.ToInt32(300 / scaleFactorHeight));
+            btnDeleteAllPlayer.Location = new Point(Convert.ToInt32(btnDeleteAllPlayerOldLocation.X / scaleFactorHeight), Convert.ToInt32(btnDeleteAllPlayerOldLocation.Y / scaleFactorHeight));
+            tbxAddPlayer.Location = new Point(Convert.ToInt32(tbxAddPlayerOldLocation.X / scaleFactorHeight), Convert.ToInt32(tbxAddPlayerOldLocation.Y / scaleFactorHeight));
+            picBoxAddPlayer.Location = new Point(Convert.ToInt32(picBoxAddPlayerOldLocation.X / scaleFactorHeight), Convert.ToInt32(picBoxAddPlayerOldLocation.Y / scaleFactorHeight));
+            flowPanelJoueur.Location = new Point(Convert.ToInt32(flowPanelJoueurOldLocation.X / scaleFactorHeight), Convert.ToInt32(flowPanelJoueurOldLocation.Y / scaleFactorHeight));
+
+            //btnJouer.Location = new Point(Convert.ToInt32(btnJouerOldLocation.X / scaleFactorHeight), Convert.ToInt32(btnJouerOldLocation.Y / scaleFactorHeight));
+            //btnScore.Location = new Point(Convert.ToInt32(btnScoreOldLocation.X / scaleFactorHeight), Convert.ToInt32(btnScoreOldLocation.Y / scaleFactorHeight));
+        }
+
     }
 }

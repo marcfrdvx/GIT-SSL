@@ -17,6 +17,17 @@ namespace SSL
 {
     public partial class CultureGenerale : Form
     {
+        //autoscale
+        public float newWidth;
+        public float newHeight;
+        public float originalWidth = 1280;
+        public float originalHeight = 720;
+        public Point lblQuestionOldLocation;
+        public Point tableCarreOldLocation;
+        public Point PanelRepCashOldLocation;
+        public Point PanelChoixReponseOldLocation;
+
+
         //directory des ressources pour JSON
         public string path = "..\\..\\Resources\\data.json";
         //Créer une liste de question qui stockera toutes les questions du fichier JSON
@@ -39,6 +50,11 @@ namespace SSL
         {
             RefToJouer = frm;
             InitializeComponent();
+            //autoscale
+            lblQuestionOldLocation = lblQuestion.Location;
+            tableCarreOldLocation = tableCarre.Location;
+            PanelChoixReponseOldLocation = panelChoixReponse.Location;
+            PanelRepCashOldLocation = panelRepCash.Location;
         }
 
         private void btnRetour_Click(object sender, EventArgs e)
@@ -113,6 +129,10 @@ namespace SSL
 
         private void CultureGenerale_Load(object sender, EventArgs e)
         {
+            newWidth = this.Width;
+            newHeight = this.Height;
+            ResizeControls();
+
             //initialise le tableau pour le questionnaire grâce au fichier JSON
             //using (StreamReader sr = new StreamReader(path, Encoding.Latin1))
             using (StreamReader sr = new StreamReader(path))
@@ -212,6 +232,19 @@ namespace SSL
         private void MauvaiseReponse(object sender)
         {
             (sender as Label).ForeColor = Color.FromArgb(192, 0, 0);
+
+            //génère un tableau des 4 contrôles pour afficher les réponses
+            TableLayoutControlCollection controls = tableCarre.Controls;
+            //pour chaque contrôle affiche la réponse associée
+            int i = 0;//permet d'itérer dans le tableau answers[] associé à la question pour afficher chaque réponse
+            foreach (Control item in controls)
+            {
+                if (item.Text == q.answers[q.correct_answer-1])
+                {
+                    item.ForeColor = Color.FromArgb(0, 192, 0);
+                }
+                i++;
+            }
         }
 
         private void btnCashCorrect_Click(object sender, EventArgs e)
@@ -220,5 +253,41 @@ namespace SSL
             Player.listPlayer[numJoueurActuel].Score += 3;
             NextQuestion();
         }
+
+        private void ResizeControls()
+        {
+            float scaleFactorWidth = originalWidth / newWidth;
+            float scaleFactorHeight = originalHeight / newHeight;
+            Control.ControlCollection controlCollection = this.Controls;
+
+            foreach (Control item in controlCollection)
+            {
+                //if (item.GetType() == typeof(Button)){}                
+                item.Size = new Size(Convert.ToInt32(item.Size.Width / scaleFactorWidth), Convert.ToInt32(item.Size.Height / scaleFactorHeight));
+                item.Font = new Font(item.Font.FontFamily, item.Font.Size / scaleFactorHeight);
+            }
+            picBoxRight.Left = Convert.ToInt32(newWidth - picBoxRight.Width - 25);
+            lblNumQuestion.Left = Convert.ToInt32(newWidth - lblNumQuestion.Width - 50);
+            lblNumQuestion.Top = picBoxRight.Height + picBoxRight.Top + 25;
+            lblJoueur.Location = new Point((this.Width - lblJoueur.Width) / 2, Convert.ToInt32(50 / scaleFactorHeight));
+            lblQuestion.Location = new Point(Convert.ToInt32(lblQuestionOldLocation.X / scaleFactorHeight), Convert.ToInt32(lblQuestionOldLocation.Y / scaleFactorHeight));
+            tableCarre.Location = new Point(Convert.ToInt32(tableCarreOldLocation.X / scaleFactorHeight), Convert.ToInt32(tableCarreOldLocation.Y / scaleFactorHeight));
+            panelChoixReponse.Location = new Point(Convert.ToInt32(PanelChoixReponseOldLocation.X / scaleFactorHeight), Convert.ToInt32(PanelChoixReponseOldLocation.Y / scaleFactorHeight));
+            panelRepCash.Location = new Point(Convert.ToInt32(PanelRepCashOldLocation.X / scaleFactorHeight), Convert.ToInt32(PanelRepCashOldLocation.Y / scaleFactorHeight));
+
+            btnCashCorrect.Size = btnRetour.Size;
+            btnRepCarre.Size = btnRetour.Size;
+            btnRepCash.Size = btnRetour.Size;
+            btnCashCorrect.Font = btnRetour.Font;
+            btnRepCarre.Font = btnRetour.Font;
+            btnRepCash.Font = btnRetour.Font;
+
+            lblRep1.Font = lblJoueur.Font;
+            lblRep2.Font = lblJoueur.Font;
+            lblRep3.Font = lblJoueur.Font;
+            lblRep4.Font = lblJoueur.Font;
+            lblRepCash.Font = lblJoueur.Font;
+        }
+
     }
 }
